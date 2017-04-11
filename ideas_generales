@@ -1,0 +1,36 @@
+la idea general es fabricar una aplicacion que permita a las personas
+montar su propio protocolo de seguridad, por medio del cifrado de informacion,
+a partir de algoritmos conocidos puestos en cadena.
+la idea es que las personas puedan generar un protocolo de seguridad para su
+comunicacion por medio de canales inseguros.
+es conocido hoy en dia que los diferentes "servicios gratuitos" de internet
+realmente buscan vender nuestra informacion. La herramienta debe de poder 
+ser variable y ayudar a las personas a crear nuevos protocolos para cifrar
+apartir de algoritmos conocidos.
+segun los diferentes algoritmos que existen estos son candidatos
+a utilizar:
+-cifrado cesar			cc
+-cifrado cesar a dos claves	ccdc
+-cifrado vingenere		cv
+-cifrado RSA			cr
+-transposicion			ct
+-transposicion partida		ctp
+-mensaje basura			cmb
+
+descripccion del proceso de algoritmos usados.
+el cifrado cesar solo usa un corrimiento a nivel de byte por suma.
+
+el cifrado vingenere utliza una palabra con la cual realiza un cesar
+con cada letra de la palabra para cada posicion a p mod n=0 donde p el 
+la posicion en el mensaje y n la posicion de la letra en la palabra.
+
+el RSA es un maldito violador.
+
+trasnposicion pone el mensaje en modo espejo.
+ 
+tranposicion partida pone secciones del mensaje en modo espejo.
+
+mensaje basura agrega contenido al mensaje para escribir algo erroneo.
+
+
+
