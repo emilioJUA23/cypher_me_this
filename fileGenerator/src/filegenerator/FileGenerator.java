@@ -55,7 +55,7 @@ public class FileGenerator {
     public static int randInt() 
     { 
         Random a = new Random();
-        return 48+ a.nextInt(90-48);
+        return 1+ a.nextInt(Character.MAX_VALUE-1);
     }
     
 }
