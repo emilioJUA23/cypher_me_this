@@ -34,14 +34,16 @@ public class exe
             System.out.println("Ingrese la ruta del archivo");
             String archivo1 = reader1.readLine();
             BufferedReader reader2 = new BufferedReader(new FileReader(archivo1));
-            PrintWriter writer = new PrintWriter(archivo1+"_out", "UTF-8");
+            PrintWriter writer = new PrintWriter(archivo1+"_out");
             String linea = reader2.readLine();
-            cesar_c cifrador = new cesar_c();
+            cesar_c_dos_claves cifrador;
             int i=0;
             while(linea!=null)
             {
                 i++;
-                writer.println(cifrador.decifrar(cifrador.cifrar(linea, i), i));
+                cifrador = new cesar_c_dos_claves(i,i+30);
+                String nlinea=cifrador.decifrar(cifrador.cifrar(linea));
+                writer.println(cifrador.decifrar(cifrador.cifrar(linea)));
                 linea=reader2.readLine();
             }
             reader2.close();
