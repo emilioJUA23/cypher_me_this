@@ -15,11 +15,11 @@ public class cesar_c
     String text ="";        // este es el texto que el usuario desea cifrar
     byte[] data;            // aqui se almacena toda la data a nivel de bytes 
     
-    public cesar_c() // aqui se declara la intancea de la clase 
+    public cesar_c(int corrimiento) // aqui se declara la intancea de la clase 
     {
-    
+      this.corrimiento=corrimiento;
     }
-    public int casteado(int in)//comprueba que el corrimiento no pase de 256 que es lo maximo en archivos asccii
+    public int casteado(int in)//comprueba que el entero este dentro de los valores unicode permitidos
     {
         if (in>=Character.MAX_VALUE)
         {
@@ -41,39 +41,39 @@ public class cesar_c
         }
     }
     
-    public String cifrar(String texto,int corr)
+    public String cifrar(String texto)
     {   
         try
         {
-           int cor =casteado(corr);
-           String cambiado="";
+           int cor =casteado(corrimiento);    //casteamos el corrimiento
+           String cambiado="";                //declaramos el nuevo string
            for (int i = 0; i < texto.length(); i++)
            {
-               cambiado = cambiado+(char)casteado(texto.charAt(i)+cor);
+               cambiado = cambiado+(char)casteado(texto.charAt(i)+cor); //agregamos al nuevo string el caracter desfazado
            }
-           return cambiado;
+           return cambiado;   //devolvemos el cambio
         }
         catch(Exception ex)
         {
-          return "";
+          return null;
         }
     }
     
-    public String decifrar(String texto,int corr)
+    public String decifrar(String texto)
     {
         try
         {
-           int cor =casteado(corr);
-           String cambiado="";
+           int cor =casteado(corrimiento);    //casteamos el corrimiento
+           String cambiado="";                //declaramos el nuevo string
            for (int i = 0; i < texto.length(); i++)
            {
-               cambiado = cambiado+(char)casteado(texto.charAt(i)-cor);
+               cambiado = cambiado+(char)casteado(texto.charAt(i)-cor); //agregamos al nuevo string el caracter desfazado
            }
-           return cambiado;
+           return cambiado;   //devolvemos el cambio
         }
         catch(Exception ex)
         {
-          return "";
+          return null;
         }
     }
     
