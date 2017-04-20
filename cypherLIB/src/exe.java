@@ -36,14 +36,15 @@ public class exe
             BufferedReader reader2 = new BufferedReader(new FileReader(archivo1));
             PrintWriter writer = new PrintWriter(archivo1+"_out");
             String linea = reader2.readLine();
-            cesar_c_dos_claves cifrador;
+            transposicion cifrador;
+            transposicion decifrador;
             int i=0;
             while(linea!=null)
             {
                 i++;
-                cifrador = new cesar_c_dos_claves(i,i+30);
-                String nlinea=cifrador.decifrar(cifrador.cifrar(linea));
-                writer.println(cifrador.decifrar(cifrador.cifrar(linea)));
+                cifrador = new transposicion(linea);
+                decifrador= new transposicion(cifrador.rehecho);
+                writer.println(decifrador.rehecho);
                 linea=reader2.readLine();
             }
             reader2.close();
