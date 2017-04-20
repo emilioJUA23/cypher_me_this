@@ -14,26 +14,23 @@ public class transposicion
     String  rehecho="";
     public transposicion(String texto)
     {
-      byte[] temp=texto.getBytes();
-      temp =espejo(temp);
-      rehecho=new String(temp);
+      rehecho=espejo(texto);
     }
     
-    public byte[] espejo(byte[] realidad) //el metodo espejo voltea el array 
+    public String espejo(String realidad) //el metodo espejo voltea el texto
     {
-      byte[] espejo =new byte[realidad.length];  //creo nuevo arrar
-      for (int i = 0; i < espejo.length; i++) 
+      String espejo ="";
+      for (int i = realidad.length()-1; i >=0; i--) 
       {
-        espejo[i]=realidad[realidad.length-1-i];  // guardo el viejo array en orden inverso
+         espejo=espejo+realidad.charAt(i);
       }
-     
-      return espejo;                            //retorno el nuevo array
+      return espejo;
     }
     
     public String generadorDeClave()
     {
         String retorno="ct";
-      return retorno;
+        return retorno;
     }
     
 }
